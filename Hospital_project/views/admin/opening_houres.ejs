@@ -1,0 +1,92 @@
+<%- include("navbar.ejs")%>
+    <form action="/admin/save_opening_hours" method="post">
+        <div class="container-fluid">
+            <div class="row bg-secondary text-center text-white pb-4 pt-4  rounded-5">
+                <div class="col-md-12 ">
+                    <h1 class="text-danger" style="font-family: cursive;">Opening <span class="text-warning">Hours</span>&nbsp;&nbsp;<i class="bi bi-alarm-fill text-primary"></i> </h1>
+                </div>
+                <div class="col-md-4">
+                    Day
+
+                    <input type="text" name="day" id="" class="form-control">
+
+                </div>
+                <div class="col-md-4">
+                    Open hour
+                    <input type="time" name="open_time" class="form-control" id="">
+
+                </div>
+                <div class="col-md-4">
+                    Close hour
+                    <input type="time" name="close_time" class="form-control" id="">
+
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-4 text-center mt-5 d-grid gap-2">
+                    <button type="submit" class="btn btn-primary ">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+        <div class="container">
+            
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <table class=" table table-bordered  ">
+                        <tr class="text-center">
+                            <th class="text-center text-primary bg-warning display-6">Action</th>
+                            <th>Sr.No</th>
+                            <th>Day</th>
+                            <th>Open Hours</th>
+                            <th>Close
+                                 Hours</th>
+                        </tr>
+                        <% time_shedule.forEach((val,i)=>{ %>
+                            <tr class="text-center">
+                                <td >
+                                    <a href="/admin/edit_time_shedule/<%=val.opening_hours_id%>"> 
+                                        <button class="btn btn-primary">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </a>
+                                    <a href="/admin/delete_time_shedule/<%=val.opening_hours_id%>">
+                                        <button onclick="return confirm('are you sure.........?')" class="btn btn-danger">
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </a>
+                                    
+                                </td>
+                                <td>
+                                    <%=i+1%>
+                                </td>
+                                <td>
+                                    <%=val.day%>
+                                </td>
+                                <td>
+                                    <%=val.open_time%>
+                                </td>
+                                <td>
+                                    <%=val.close_time%>
+                                </td>
+                            </tr>
+
+                            <% })%>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    
+
+
+
+
+
+
+
+
+    <%- include("footer.ejs")%>

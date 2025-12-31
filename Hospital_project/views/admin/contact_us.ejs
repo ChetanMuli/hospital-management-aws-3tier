@@ -1,0 +1,43 @@
+<%- include("navbar.ejs")%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center bg-info text-white mb-3">CONTACT INFO</h2>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-sm ">
+                <tr>
+                    <th>SN</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>MONBILE</th>
+                    <th>MESSAGE</th>
+                </tr>
+                <% contact_info.forEach((val,i)=>{%>
+                    <tr>
+                        <td><%=i+1%></td>
+                        <td><%=val.user_name%></td>
+                        <td><%=val.user_email%></td>
+                        <td><%=val.user_mobile%></td>
+                        <td><%=val.user_message%></td>
+                    </tr>
+                    
+                <%}) %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<%- include("footer.ejs")%>
+
+
+
+
+

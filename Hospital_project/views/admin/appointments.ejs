@@ -1,0 +1,37 @@
+<%- include("navbar.ejs")%>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 text-center mt-2 mb-2">
+            <h2>All Appointments</h2>
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>SN</th>
+                    <!-- <th>SERVICE NAME</th>
+                    <th>DOCTOR NAME</th> -->
+                    <th>PATIENT NAME</th>
+                    <th>PATIENT MOBILE</th>
+                    <th>APPOINTMENT DATE</th>
+                    <th>APPOINTMENT TIME</th>
+                    <th>STATUS</th>
+                </tr>
+                <% for (var i=0; i<appointment_list.length; i++) { %>
+                    <tr>
+                        <td></td>
+                        <td><%=i+1%></td>
+                        <!-- <td><%=appointment_list[i].services_name%></td> -->
+                        <!-- <td><%=appointment_list[i].doctor_name%></td> -->
+                        <td><%=appointment_list[i].user_name%></td>
+                        <td><%=appointment_list[i].user_mobile%></td>
+                        <td><%=appointment_list[i].appointment_date%></td>
+                        <td><%=appointment_list[i].appointment_time%></td>
+                        <td><%=appointment_list[i].appointment_status%></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include("footer.ejs")%>

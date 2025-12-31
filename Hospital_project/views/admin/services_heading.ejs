@@ -1,0 +1,52 @@
+<%- include("navbar.ejs")%>
+<form action="/admin/save_services_heading" method="post" enctype="multipart/form-data">
+    <div class="container ">
+        <div class="row bg-info p- 5 rounded-4  ">
+            <div class="col-md-12 bg-dark text-white p-5 rounded-4">
+                <h3 class="text-center">Services <span class="text-warning"> Page Heading.....</span> </h3>
+            </div>
+            <div class="col-md-12 mt-5">
+                services heading
+                <input type="text" class="form-control" value="<%=services_headings[0].services_heading%>" name="services_heading" id="">
+    
+            </div>
+            <div class="col-md-4 mt-5">
+                Before image
+                <input type="file" class="form-control" name="before_img" id="">
+    
+            </div>
+            <div class="col-md-1 p-1 mt-4">
+                <img src="/img/<%=services_headings[0].before_img%>" width="100px" alt="">
+
+            </div>
+            <div class="col-md-4 mt-5">
+                After image
+
+                <input type="file" class="form-control" name="after_img" id="">
+    
+            </div>
+            <div class="col-md-1 mt-5">
+                <img src="/img/<%=services_headings[0].after_img%>" width="100px" alt="">
+
+            </div>
+            <div class="col-md-12 text-center mt-5" >
+                <button class="btn btn-lg btn-primary">save service heading</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+<%- include("footer.ejs")%>
+
+
+
+
+
+ 

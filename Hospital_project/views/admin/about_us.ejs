@@ -1,0 +1,65 @@
+<%- include("navbar.ejs")%>
+<form action="/admin/save_about_us" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="row bg-dark pt-4 pb-4 rounded-5 text-white text-center">
+            <div class="col-md-12">
+                <h2 class="text-center text-danger display-4">About <span class="text-warning display-5">Us</span> </h2>
+            </div>
+            <div class="col-md-3">
+                heading
+                <input type="text" value="<%=about_info[0].heading%>" name="heading" class="form-control" id="">
+            </div>
+            <div class="col-md-4">
+                 sub heading
+                <input type="text" value="<%=about_info[0].sub_heading%>" name="sub_heading" class="form-control" id="">
+            </div>
+            <div class="col-md-3">
+                about us image
+                <input type="file"  name="about_img" class="form-control " id="img" >
+
+            </div>
+            <div class="col-md-1">
+                <img src="/img/<%=about_info[0].about_img%>"  width="100px"  alt="">
+
+            </div>
+       
+            <div class="col-md-3">
+                key point 1
+                <input type="text" value="<%=about_info[0].key_point_1%>" name="key_point_1" class="form-control" id="">
+            </div>
+            <div class="col-md-4">
+                key point 2
+                <input type="text" value="<%=about_info[0].key_point_2%>" name="key_point_2" class="form-control" id="">
+            </div>
+            <div class="col-md-3">
+                key point 3
+                <input type="text " value="<%=about_info[0].key_point_3%>" name="key_point_3" class="form-control" id="">
+            </div>
+            <div class="col-md-3">
+                key point 4
+                <input type="text" value="<%=about_info[0].key_point_4%>" name="key_point_4" class="form-control" id="">
+            </div>
+            <div class="col-md-12">
+                details
+             <textarea name="details"  id="" cols="10" class="form-control" rows="2"><%=about_info[0].details%></textarea>
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-success">save about info</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+<%- include("footer.ejs")%>
+
+
+
+
+

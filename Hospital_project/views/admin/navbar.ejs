@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sonwane Hospital Admin Panel</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/admin/assets/img/favicon.png" rel="icon">
+  <link href="/admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <script src="https://kit.fontawesome.com/e6c079020c.js" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/admin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/admin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <link href="/admin/assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center bg-light shadow-lg text-white">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/admin" class="logo d-flex align-items-center">
+        <i class="fa-regular fa-hospital text-primary h1"></i>&nbsp;&nbsp;
+
+        <span class="d-none d-lg-block">Sonwane Hospital</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    <!-- End Logo -->
+
+  
+
+    <nav class="header-nav ms-auto bg">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-3" href="#" data-bs-toggle="dropdown">
+            <img src="/admin/assets/img/avi.png" alt="Profile" class="rounded-circle ">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Ajabe Avi</span>
+          </a><!-- End Profile Image Icon -->
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 class="text-primary">Ajabe Avi</h6>
+              <span class="text-danger">Web Devoloper</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/admin/users_profile">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/admin/logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul>
+          <!-- End Profile Dropdown Items -->
+        </li>
+        <!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar bg-info">
+
+    <ul class="sidebar-nav " id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/admin">
+         <i class="fa-solid fa-circle"></i>
+          <span class="">Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/appointments">
+         <i class="fa-solid fa-circle"></i>
+          <span class="">Appointments</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/basic_info">
+         <i class="fa-solid fa-circle"></i>
+          <span>Basic info</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/sliders">
+         <i class="fa-solid fa-circle"></i>
+          <span>sliders </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/opening_hours">
+         <i class="fa-solid fa-circle"></i>
+          <span>opening hours </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/about_us">
+         <i class="fa-solid fa-circle"></i>
+          <span>about us </span>
+        </a>
+      </li>
+      <!-- services start -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-circle-dot"></i><span>Services</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="services-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/services_heading">
+              <i class="bi bi-circle"></i><span>Heading</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/manage_services">
+              <i class="bi bi-circle"></i><span>manage services</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- services end -->
+      <!-- offer start -->
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/offer">
+         <i class="fa-solid fa-circle"></i>
+          <span>manage offer  </span>
+        </a>
+      </li>
+      <!-- offer end -->
+      <!-- pricing start -->
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/pricing">
+         <i class="fa-solid fa-circle"></i>
+          <span>manage PRICING PLAN  </span>
+        </a>
+      </li>
+      <!--  -->
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-circle-dot"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>Alerts</span>
+            </a>
+          </li>
+        </ul>
+      </li>  -->
+      <!--  -->
+      <!-- pricing end -->
+      <!-- our team start -->
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/doctors">
+         <i class="fa-solid fa-circle"></i>
+          <span>Our Team  </span>
+        </a>
+      </li>
+      <!-- our team ends -->
+
+      <!-- =============== -->
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/contact_us">
+         <i class="fa-solid fa-circle"></i>
+          <span>contact us  </span>
+        </a>
+      </li>
+
+
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-circle-dot"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>Alerts</span>
+            </a>
+          </li>
+        </ul>
+      </li> End Components Nav -->
+ 
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+<!-- End Page Title -->

@@ -1,0 +1,111 @@
+<%- include('navbar.ejs')%>
+<form action="/admin/save_doctors" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row  text-center text-white rounded-4  " style="background-color: rgb(98, 44, 245);">
+            <div class="col-md-12 pt-5">
+                <h3 class="text-center"> Add <span class="text-warning fw-bold"> New Doctors</span></h3>
+            </div>
+            <div class="col-md-4">
+                Doctor name 
+                <input type="text" name="doctor_name" class="form-control" id="">
+            </div>
+            <div class="col-md-4">
+                Doctor mobile
+                <input type="text" name="doctor_mobile" class="form-control" id="">
+            </div>
+            <div class="col-md-4">
+                Doctor email 
+                <input type="text" name="doctor_email" class="form-control" id="">
+            </div>
+            <div class="col-md-4">
+                Speciallist 
+                <input type="text" name="speciallist" class="form-control" id="">
+            </div>
+            <div class="col-md-4">
+                Doctor service name 
+                <select name="doctor_service_id" class="form-control" required id="">
+                    <option value=""></option>
+                    <% service_list.forEach((val)=>{ %>
+                        <option value="<%=val.service__id%>"><%=val.services_name%></option>
+                        
+                        <%}) %>
+    
+                </select>
+            </div>
+            
+            <div class="col-md-4">
+                Doctor image
+                <input type="file" name="doctore_image" class="form-control" id="">
+            </div>
+            <div class="col-md-6 mt-5">
+                twitter link 
+                <input type="url" name="twitter_link" class="form-control" id="">
+            </div>
+            <div class="col-md-6 mt-5">
+                facebook link 
+                <input type="url" name="facebook_link" class="form-control" id="">
+            </div>
+
+         
+            <div class="col-md-6">
+                instagram link 
+                <input type="url" name="instagram_link" class="form-control" id="">
+            </div>
+            <div class="col-md-6">
+                linkedin link 
+                <input type="url" name="linkedin_link" class="form-control" id="">
+            </div>
+    
+            <div class="col-md-12 text-center mt-5 pb-4">
+                <button class="btn btn-outline-warning">
+                    Save Doctors
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered ">
+                <tr>
+                    <th class="text-center text-info h4" style="font-family: cursive;">Action</th>
+                    <th>sn</th>
+                    <th>name</th>
+                    <th>mobile</th>
+                    <th>email</th>
+                    <th>speciallist</th>
+                    <th> service namest</th>
+                    <th>Doctor image</th>
+                </tr>
+                <% doctors_info.forEach((val,i)=>{ %>
+
+                
+                    <tr class="text-center">
+                        <td>
+                            <a href="/admin/edit_doctors/<%=val.doctor_id %>">
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                            </a>
+                            <a href="/admin/delete_doctors/<%=val.doctor_id %>">
+                                <button onclick="return confirm('are you sure')" class="btn btn-danger btn-sm">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=val.doctor_name%></td>
+                        <td><%=val.doctor_mobile%></td>
+                        <td><%=val.doctor_email%></td>
+                        <td><%=val.speciallist%></td>
+                        <td><%=val.services_name%></td>
+                        <td><img src="/img/<%=val.doctore_image%>" width="100px" alt=""></td>
+                    </tr>
+                    <% }) %>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs')%>

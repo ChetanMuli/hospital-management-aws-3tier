@@ -1,0 +1,46 @@
+<%- include("navbar.ejs")%>
+    <form action="/admin/update_opening_hours" method="post">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>opening hours</h1>
+                </div>
+                <div class="col-md-6">
+                    day
+                    
+                    <input type="hidden" name="opening_hours_id" value="<%=time_info[0].opening_hours_id%>" class="form-control">
+                    <input type="text" name="day" value="<%=time_info[0].day%>" class="form-control">
+
+                </div>
+                <div class="col-md-3">
+                    open hour
+                    <input type="time" name="open_time" value="<%=time_info[0].open_time%>" class="form-control" id="">
+
+                </div>
+                <div class="col-md-3">
+                    close hour
+                    <input type="time" name="close_time" value="<%=time_info[0].close_time%>" class="form-control" id="">
+
+                </div>
+                <div class="col-12 text-center mt-5">
+                    <button type="submit" class="btn btn-success btn-lg ">
+                        save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+<%- include("footer.ejs")%>
+
+
+
+
+

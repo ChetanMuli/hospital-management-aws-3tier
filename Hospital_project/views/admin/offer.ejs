@@ -1,0 +1,22 @@
+<%- include('navbar.ejs')%>
+<form action="/admin/save_offer" method="post">
+    <div class="container p-5 bg-body-secondary">
+        <div class="row bg-success rounded-4 pt-4">
+            <div class="col-md-12">
+                <h3 class="text-center text-warning">letest offer</h3>
+            </div>
+            <div class="col-md-12">
+                <textarea placeholder="enter heading"  class="form-control" name="offer_heading"  id="" cols="30" rows="3"><%=offer_info[0].offer_heading%></textarea>
+            </div>
+            <div class="col-md-12 mt-4">
+                <textarea placeholder="enter sub heading"  class="form-control" name="offer_sub_heading" id="" cols="30" rows="3"><%=offer_info[0].offer_sub_heading%></textarea>
+            </div>
+            <div class="col-md-12 mt-3 mb-4 text-center">
+                <button class="btn btn-primary  ">save offers</button>
+            </div>
+        </div>
+    </div>
+    
+</form>
+
+<%- include('footer.ejs')%>

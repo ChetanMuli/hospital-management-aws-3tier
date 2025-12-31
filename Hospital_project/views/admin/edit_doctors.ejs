@@ -1,0 +1,73 @@
+<%- include('navbar.ejs')%>
+<form action="/admin/update_doctors" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">
+                    update Doctors
+                </h3>
+            </div>
+            <div class="col-md-4">
+                doctor name 
+                <input type="text" value="<%=edit_doctors[0].doctor_name%>" name="doctor_name" class="form-control" id="">
+                <input type="hidden" value="<%=edit_doctors[0].doctor_id%>" name="doctor_id" class="form-control" id="">
+            </div>
+            <div class="col-md-4">
+                doctor mobile
+                <input type="text" value="<%=edit_doctors[0].doctor_mobile%>" name="doctor_mobile" class="form-control" id="">
+            </div>
+            <div class="col-md-4">
+                doctor email 
+                <input type="text"  value="<%=edit_doctors[0].doctor_email%>" name="doctor_email" class="form-control" id="">
+            </div>
+            <div class="col-md-3 mt-5">
+                speciallist 
+                <input type="text" value="<%=edit_doctors[0].speciallist%>" name="speciallist" class="form-control" id="">
+            </div>
+            <div class="col-md-3 mt-5">
+                doctor service name 
+                <select name="doctor_service_id" class="form-control"  id="">
+                    <option  value="<%=edit_doctors[0].doctor_service_id%>"><%=edit_doctors[0].services_name%></option>
+                    <% service_list.forEach((val)=>{ %>
+                        <option value="<%=val.service__id%>"><%=val.services_name%></option>
+                        
+                        <%}) %>
+    
+                </select>
+            </div>
+            
+            <div class="col-md-3 mt-5">
+                doctor image
+                <input type="file" name="doctore_image" class="form-control" id="">
+            </div>
+            <div class="col-md-3 mt-5">
+                
+                <img src="/img/<%=edit_doctors[0].doctore_image%>" width="200px">
+            </div>
+            <div class="col-md-3 mt-5">
+                twitter link 
+                <input type="url" value="<%=edit_doctors[0].twitter_link%>" name="twitter_link" class="form-control" id="">
+            </div>
+            <div class="col-md-3 mt-5">
+                facebook link 
+                <input type="url" value="<%=edit_doctors[0].facebook_link%>" name="facebook_link" class="form-control" id="">
+            </div>
+            <div class="col-md-3 mt-5">
+                linkedin link 
+                <input type="url" value="<%=edit_doctors[0].linkedin_link%>" name="linkedin_link" class="form-control" id="">
+            </div>
+            <div class="col-md-3 mt-5">
+                instagram link 
+                <input type="url" value="<%=edit_doctors[0].instagram_link%>" name="instagram_link" class="form-control" id="">
+            </div>
+    
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">
+                    update doctors
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include('footer.ejs')%>
+

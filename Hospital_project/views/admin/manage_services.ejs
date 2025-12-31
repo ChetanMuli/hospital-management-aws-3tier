@@ -1,0 +1,96 @@
+<%- include("navbar.ejs")%>
+<form action="/admin/save_service" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-primary rounded-5">
+        <div class="row text-white text-center">
+            <div class="col-md-12 bg-dark rounded-4">
+                <h3 class="text-center text-info pt-2">
+                    Manage  <span class="text-warning">Services</span>
+                </h3>
+            </div>
+            <div class="col-md-6 ">
+                service name
+                <input type="text" name="service_name" class="form-control bg-light" id="">
+            </div>
+            <div class="col-md-6 ">
+                service images
+                <input type="file" name="service_images" class="form-control bg-light" id="">
+            </div>
+            <div class="col-md-6 ">
+                service price
+                <input type="number" name="service_price" class="form-control bg-light" id="">
+            </div>
+            <div class="col-md-6 ">
+                key point 1
+                <input type="text" name="key_point_1" class="form-control bg-light" id="">
+            </div> 
+            <div class="col-md-6 ">
+                key point 2
+                <input type="text" name="key_point_2" class="form-control bg-light" id="">
+            </div>
+            <div class="col-md-6 ">
+                key point 3
+                <input type="text" name="key_point_3" class="form-control bg-light" id="">
+            </div>
+            <div class="col-md-12 mt-5 text-center">
+                <button class="btn btn-lg btn-primary"> save service</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    
+                    <th class="text-info text-center">Sr.No</th>
+                    <th>Sn</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>key point 1</th>
+                    <th>key point 2</th>
+                    <th>key point 3</th>
+                </tr>
+                <% services_info.forEach((val,i)=>{ %>
+                    <tr>
+                        <td>
+                            <a href="/admin/edit_service/<%=val.service__id%>">
+                                <button class="btn btn-sn btn-primary ">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                             </a>
+                             <a href="/admin/delete_service/<%=val.service__id%>">
+                                <button onclick="return confirm('are you sure')" class="btn btn-sn btn-danger ">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                             </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=val.services_name%></td>
+                        <td><%=val.service_price%></td>
+                        <td><%=val.key_point_1%></td>
+                        <td><%=val.key_point_2%></td>
+                        <td><%=val.key_point_3%></td>
+                        <td><img src="/img/<%=val.service_images%>" width="100px" alt=""></td>
+                    </tr>
+               <% })%>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<%- include("footer.ejs")%>
+
+
+
+
+
