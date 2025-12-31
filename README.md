@@ -67,8 +67,8 @@ User → HTTPS → CloudFront → HTTP → Web EC2 → App EC2 → RDS
 
 ### 1️ Web EC2 – Install & Configure Nginx
 ```bash
-sudo dnf update -y
-sudo dnf install nginx -y
+sudo yum update -y
+sudo yum install nginx -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
@@ -99,7 +99,7 @@ sudo systemctl restart nginx
 ### 2️ Application EC2 – Install Node.js
 ```bash
 curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
-sudo dnf install nodejs -y
+sudo yum install nodejs -y
 node -v
 npm -v
 ```
@@ -108,7 +108,7 @@ npm -v
 
 ### 3️ Deploy Application
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/ChetanMuli/hospital-management-aws-3tier.git
 cd Hospital_project
 npm install
 ```
@@ -128,7 +128,7 @@ pm2 status
 
 ### 5️ Database – Import SQL into Amazon RDS
 ```bash
-sudo dnf install mysql -y
+sudo yum install mysql -y
 ```
 
 ```bash
